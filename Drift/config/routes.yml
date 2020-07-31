@@ -2,3 +2,6 @@
 default:
   path: /
   controller: App\Controller\DefaultController
+provinces:
+  path: /provinces
+  controller: App\Controller\GetAllProvinciesController
