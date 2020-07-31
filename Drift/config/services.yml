@@ -1,6 +1,18 @@
 parameters:
     kernel.secret: yoursecretshouldbehere
     app_path: "../.."
+#
+# DBAL configuration
+#
+dbal:
+  connections:
+    main:
+      driver: "%env(DBAL_DRIVER)%"
+      host: "%env(DBAL_HOST)%"
+      port: "%env(int:DBAL_PORT)%"
+      user: "%env(DBAL_USER)%"
+      password: "%env(DBAL_PASSWORD)%"
+      dbname: "%env(DBAL_DATABASE)%"
 
 framework:
     form: false
@@ -24,3 +36,8 @@ services:
         resource : "%app_path%/src/Controller/*"
         tags:
             - {name: controller.service_arguments}
+
+    Infrastructure\Province\InMemoryProvinceRepository:
+    Infrastructure\Province\DbalProvinceRepository:
+    Domain\Province\ProvinceRepository:
+      alias: Infrastructure\Province\DbalProvinceRepository
