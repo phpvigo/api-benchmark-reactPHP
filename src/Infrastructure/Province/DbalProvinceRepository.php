@@ -2,6 +2,7 @@
 
 namespace Infrastructure\Province;
 
+use App\Infrastructure\Province\ProvinceProxy;
 use Domain\Province\ProvinceRepository;
 use Drift\DBAL\Connection;
 use React\Promise\PromiseInterface;
@@ -27,6 +28,13 @@ class DbalProvinceRepository implements ProvinceRepository
     {
         return $this
             ->connection
-            ->findBy(self::TABLE);
+            ->findBy(self::TABLE)
+            ->then(function ($provinces) {
+                $provincesHidratation = [];
+                foreach ($provinces AS $province) {
+                    $provincesHidratation[] = new ProvinceProxy($province);
+                }
+                return \React\Promise\resolve($provincesHidratation);
+            });
     }
 }
