@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d5456e0039c0ef00dd49870ddbcaedd",
+    "content-hash": "fbca150f7329066e81552bec81fa6049",
     "packages": [
         {
             "name": "alecrabbit/php-cli-snake",
@@ -847,6 +847,48 @@
             ],
             "description": "Http Kernel component for Drift, based on Symfony Http Kernel component",
             "time": "2020-03-24T09:14:34+00:00"
+        },
+        {
+            "name": "drift/mysql-bundle",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/driftphp/mysql-bundle.git",
+                "reference": "16d614816f05ec1919c32c1fa2f9d28a638bade3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/driftphp/mysql-bundle/zipball/16d614816f05ec1919c32c1fa2f9d28a638bade3",
+                "reference": "16d614816f05ec1919c32c1fa2f9d28a638bade3",
+                "shasum": ""
+            },
+            "require": {
+                "drift/http-kernel": "0.1.*",
+                "mmoreram/base-bundle": "^2.1",
+                "php": "^7.3",
+                "react/mysql": "^0.5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Drift\\Mysql\\": "."
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Morera",
+                    "email": "yuhu@mmoreram.com"
+                }
+            ],
+            "description": "Mysql Bundle for DriftPHP, a framework on top of Symfony and ReactPHP components",
+            "time": "2019-12-17T09:30:17+00:00"
         },
         {
             "name": "drift/react-functions",
@@ -1705,6 +1747,52 @@
                 "streaming"
             ],
             "time": "2020-01-12T13:15:06+00:00"
+        },
+        {
+            "name": "react/mysql",
+            "version": "v0.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/friends-of-reactphp/mysql.git",
+                "reference": "c6daf35a494817d50298a29c858e3290b6db0e88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/friends-of-reactphp/mysql/zipball/c6daf35a494817d50298a29c858e3290b6db0e88",
+                "reference": "c6daf35a494817d50298a29c858e3290b6db0e88",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.1 || ^1.1",
+                "php": ">=5.4.0",
+                "react/event-loop": "^1.0 || ^0.5",
+                "react/promise": "^2.7",
+                "react/promise-stream": "^1.1",
+                "react/promise-timer": "^1.5",
+                "react/socket": "^1.1"
+            },
+            "require-dev": {
+                "clue/block-react": "^1.2",
+                "phpunit/phpunit": "^7.0 || ^6.0 || ^5.0 || ^4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\MySQL\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Async MySQL database client for ReactPHP.",
+            "keywords": [
+                "async",
+                "database",
+                "mysql",
+                "reactphp"
+            ],
+            "time": "2019-05-21T08:55:16+00:00"
         },
         {
             "name": "react/promise",
