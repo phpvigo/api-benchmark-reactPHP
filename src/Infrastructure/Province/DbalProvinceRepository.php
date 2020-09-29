@@ -26,6 +26,12 @@ class DbalProvinceRepository implements ProvinceRepository
 
     public function findAll(): PromiseInterface
     {
+        if (!isset($_ENV['ORM_ACTIVE']) || $_ENV['ORM_ACTIVE'] === "0") {
+            return $this
+                ->connection
+                ->findBy(self::TABLE);
+        }
+
         return $this
             ->connection
             ->findBy(self::TABLE)
